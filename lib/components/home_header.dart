@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:refri_mobile/const/colors.dart';
 
-class RefriHeader extends StatelessWidget {
-  const RefriHeader({Key? key}) : super(key: key);
+class HomeHeader extends StatelessWidget {
+  const HomeHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

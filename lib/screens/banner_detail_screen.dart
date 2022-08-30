@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ArtDetailScreen extends StatelessWidget {
-  const ArtDetailScreen({Key? key}) : super(key: key);
+class BannerDetailScreen extends StatelessWidget {
+  const BannerDetailScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
