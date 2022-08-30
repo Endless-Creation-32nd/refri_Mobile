@@ -28,7 +28,7 @@ class RefriHeader extends StatelessWidget {
                     borderRadius: BorderRadius.circular(40.0),
                   ),
                   labelText: '재료명, 레시피, 리프렌즈를 찾아보세요.',
-                  labelStyle: TextStyle(color: BLACK_COLOR, fontSize: 12),
+                  labelStyle: TextStyle(color: Color(0xFF9A8266), fontSize: 12),
                   suffixIcon: Icon(Icons.search, color: BLACK_COLOR),
                 ),
               ),

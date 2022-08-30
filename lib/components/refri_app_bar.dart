@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:refri_mobile/const/colors.dart';
 
 class RefriAppBar extends StatelessWidget {
@@ -10,10 +11,14 @@ class RefriAppBar extends StatelessWidget {
       pinned: true,
       toolbarHeight: 40,
       backgroundColor: PRIMARY_COLOR,
-      title: Text("REFRI", style: TextStyle(color: BLACK_COLOR)),
+      title: SvgPicture.asset(
+        'asset/svg/logo_icon.svg',
+      ),
       actions: [
         IconButton(
-          icon: Icon(Icons.notifications_none, color: BLACK_COLOR),
+          icon: SvgPicture.asset(
+            'asset/svg/noti_icon.svg',
+          ),
           onPressed: () {},
         ),
       ],

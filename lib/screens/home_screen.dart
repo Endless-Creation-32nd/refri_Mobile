@@ -50,6 +50,7 @@ class _CarouselSlider extends StatelessWidget {
     return Container(
         child: CarouselSlider(
       options: CarouselOptions(
+        autoPlay: true,
         viewportFraction: 1,
         height: 236,
       ),
@@ -301,14 +302,6 @@ class _Article extends StatelessWidget {
                   viewCount: 24,
                   likeCount: 15,
                   commentCount: 8),
-              SizedBox(height: 16),
-              ArticleCard(
-                  title: "인기 컨텐츠에 아보카도 AtoZ레시피 따라해봤어요",
-                  nickname: "sjsjsj1246",
-                  image: "asset/img/article_sample_1.png",
-                  viewCount: 24,
-                  likeCount: 15,
-                  commentCount: 8)
             ],
           )
         ],
