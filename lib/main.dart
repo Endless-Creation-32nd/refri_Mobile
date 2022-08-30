@@ -1,4 +1,6 @@
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:refri_mobile/const/colors.dart';
 import 'package:refri_mobile/screens/home_screen.dart';
 
@@ -30,15 +32,19 @@ class _AppState extends State<App> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     Text(
-      'search',
+      '냉장고',
       style: optionStyle,
     ),
     Text(
-      'shop',
+      '추가하기',
       style: optionStyle,
     ),
     Text(
-      'box',
+      '레시피',
+      style: optionStyle,
+    ),
+    Text(
+      '내정보',
       style: optionStyle,
     ),
   ];
@@ -46,42 +52,79 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        showUnselectedLabels: false,
-        showSelectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        unselectedIconTheme: IconThemeData(color: Colors.grey),
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'home',
+        body: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
+        bottomNavigationBar: StyleProvider(
+          style: CustomStyle(),
+          child: ConvexAppBar(
+            items: [
+              TabItem(
+                title: "홈",
+                activeIcon: SvgPicture.asset('asset/svg/home_icon.svg',
+                    color: Colors.black),
+                icon: SvgPicture.asset('asset/svg/home_icon.svg',
+                    color: Colors.grey),
+              ),
+              TabItem(
+                title: "냉장고",
+                activeIcon: SvgPicture.asset('asset/svg/refri_icon.svg',
+                    color: Colors.black),
+                icon: SvgPicture.asset('asset/svg/refri_icon.svg',
+                    color: Colors.grey),
+              ),
+              TabItem(
+                icon: SvgPicture.asset(
+                  'asset/svg/plus_icon.svg',
+                ),
+              ),
+              TabItem(
+                title: "레시피",
+                activeIcon: SvgPicture.asset('asset/svg/recipe_icon.svg',
+                    color: Colors.black),
+                icon: SvgPicture.asset('asset/svg/recipe_icon.svg',
+                    color: Colors.grey),
+              ),
+              TabItem(
+                title: "내정보",
+                activeIcon: SvgPicture.asset('asset/svg/profile_icon.svg',
+                    color: Colors.black),
+                icon: SvgPicture.asset('asset/svg/profile_icon.svg',
+                    color: Colors.grey),
+              ),
+            ],
+            style: TabStyle.fixedCircle,
+            backgroundColor: PRIMARY_COLOR,
+            color: SUB_COLOR,
+            activeColor: BLACK_COLOR,
+            onTap: _onItemTapped,
+            curveSize: 0,
+            top: -45,
+            height: 80,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.image_search),
-            label: 'image_search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark_border_outlined),
-            label: 'shopping_bag',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.inbox),
-            label: 'inbox',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
-        onTap: _onItemTapped,
-      ),
-    );
+        ));
   }
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
+  }
+}
+
+class CustomStyle extends StyleHook {
+  @override
+  double get activeIconSize => 10;
+
+  @override
+  double get activeIconMargin => 10;
+
+  @override
+  double get iconSize => 24;
+
+  @override
+  TextStyle textStyle(Color color) {
+    return TextStyle(
+        height: 2.8, fontSize: 10, color: color, fontWeight: FontWeight.w500);
   }
 }
