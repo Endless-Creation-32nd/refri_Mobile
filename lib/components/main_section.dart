@@ -4,13 +4,18 @@ import 'package:refri_mobile/const/colors.dart';
 class MainSection extends StatelessWidget {
   final String title;
   final Widget child;
-  const MainSection({required this.title, required this.child, Key? key})
+  final EdgeInsetsGeometry? padding;
+
+  const MainSection(
+      {required this.title, required this.child, this.padding, Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 26),
+      padding: padding != null
+          ? padding!
+          : const EdgeInsets.symmetric(horizontal: 20.0, vertical: 26),
       child: Column(
         children: [
           Row(

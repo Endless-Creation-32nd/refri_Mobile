@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:refri_mobile/const/colors.dart';
 import 'package:refri_mobile/screens/home_screen.dart';
+import 'package:refri_mobile/screens/recipe_screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -39,10 +40,7 @@ class _AppState extends State<App> {
       '추가하기',
       style: optionStyle,
     ),
-    Text(
-      '레시피',
-      style: optionStyle,
-    ),
+    RecipeScreen(),
     Text(
       '내정보',
       style: optionStyle,
