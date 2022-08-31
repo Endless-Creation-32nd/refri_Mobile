@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:refri_mobile/screens/art_detail_screen.dart';
+import 'package:refri_mobile/screens/banner_detail_screen.dart';
 
 class BannerCard extends StatelessWidget {
   final int id;
-  final String image;
-  const BannerCard({required this.id, required this.image, Key? key})
+  final String image, title, description;
+  const BannerCard(
+      {required this.title,
+      required this.description,
+      required this.id,
+      required this.image,
+      Key? key})
       : super(key: key);
 
   @override
@@ -19,7 +24,7 @@ class BannerCard extends StatelessWidget {
                 'image': image,
               }),
               pageBuilder: (context, animation, secondaryAnimation) =>
-                  ArtDetailScreen(),
+                  BannerDetailScreen(),
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) {
                 return ScaleTransition(
@@ -31,14 +36,16 @@ class BannerCard extends StatelessWidget {
       },
       child: Stack(fit: StackFit.expand, children: [
         ClipRRect(child: Image.asset(image, fit: BoxFit.cover)),
-        _Content()
+        _Content(title: title, description: description)
       ]),
     );
   }
 }
 
 class _Content extends StatelessWidget {
-  const _Content({Key? key}) : super(key: key);
+  final String title, description;
+  const _Content({required this.title, required this.description, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,13 +67,13 @@ class _Content extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text("집에서\n연남동\n비건식당처럼.",
+            Text(title,
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: Color(0xFFEFEFE3))),
             SizedBox(height: 8),
-            Text("트렌디한 플레이팅으로\n완성하는 건강한 미식 레시피",
+            Text(description,
                 style: TextStyle(fontSize: 12, color: Color(0xFFEFEFE3))),
           ],
         ),
