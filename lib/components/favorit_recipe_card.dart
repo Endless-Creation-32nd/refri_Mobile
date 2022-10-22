@@ -44,7 +44,7 @@ class FavoritRecipeCard extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                  color: BLACK_COLOR,
+                  color: SUB_COLOR_1,
                   fontSize: 12,
                   fontWeight: FontWeight.w700,
                 ),
@@ -53,7 +53,7 @@ class FavoritRecipeCard extends StatelessWidget {
               Text(
                 '$author님의 레시피',
                 style: TextStyle(
-                  color: BLACK_COLOR,
+                  color: SUB_COLOR_1,
                   fontSize: 8,
                   fontWeight: FontWeight.w500,
                 ),

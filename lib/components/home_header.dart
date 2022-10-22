@@ -18,16 +18,16 @@ class HomeHeader extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: BLACK_COLOR, width: 1.5),
+                    borderSide: BorderSide(color: SUB_COLOR_1, width: 1.5),
                     borderRadius: BorderRadius.circular(40.0),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: BLACK_COLOR, width: 1.5),
+                    borderSide: BorderSide(color: SUB_COLOR_1, width: 1.5),
                     borderRadius: BorderRadius.circular(40.0),
                   ),
                   labelText: '재료명, 레시피, 리프렌즈를 찾아보세요.',
                   labelStyle: TextStyle(color: Color(0xFF9A8266), fontSize: 12),
-                  suffixIcon: Icon(Icons.search, color: BLACK_COLOR),
+                  suffixIcon: Icon(Icons.search, color: SUB_COLOR_1),
                 ),
               ),
             ),

@@ -173,7 +173,7 @@ class _Refriends extends StatelessWidget {
                       ),
                     ),
                     Text("닉네임 ${index + 1}",
-                        style: TextStyle(fontSize: 12, color: BLACK_COLOR)),
+                        style: TextStyle(fontSize: 12, color: SUB_COLOR_1)),
                   ],
                 );
               },

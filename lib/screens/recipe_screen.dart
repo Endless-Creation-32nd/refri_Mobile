@@ -1,12 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:refri_mobile/components/banner_card.dart';
 import 'package:refri_mobile/components/favorit_recipe_card.dart';
 import 'package:refri_mobile/components/main_section.dart';
 import 'package:refri_mobile/components/recipe_card.dart';
 import 'package:refri_mobile/components/recipe_header.dart';
 import 'package:refri_mobile/components/refri_app_bar.dart';
-import 'package:refri_mobile/components/home_header.dart';
 import 'package:refri_mobile/const/colors.dart';
 
 class RecipeScreen extends StatelessWidget {
@@ -166,7 +165,7 @@ class _PublishBanner extends StatelessWidget {
             children: [
               Text("리프렌즈에게 나의 집밥 레시피를 공유해요!\n레시피 채택시 리프리에서 멋진 선물을 보내드려요.",
                   style: TextStyle(
-                      color: BLACK_COLOR,
+                      color: SUB_COLOR_1,
                       fontSize: 10,
                       fontWeight: FontWeight.w500)),
               SizedBox(
@@ -178,7 +177,7 @@ class _PublishBanner extends StatelessWidget {
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       )),
-                      backgroundColor: MaterialStateProperty.all(BLACK_COLOR),
+                      backgroundColor: MaterialStateProperty.all(SUB_COLOR_1),
                     ),
                     child: Text("등록 신청하기",
                         style: TextStyle(

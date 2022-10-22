@@ -45,7 +45,7 @@ class RecipeHeader extends StatelessWidget {
                         Text(categories[index].title,
                             style: TextStyle(
                                 fontSize: 11,
-                                color: BLACK_COLOR,
+                                color: SUB_COLOR_1,
                                 fontWeight: FontWeight.w500)),
                       ],
                     );
@@ -53,7 +53,7 @@ class RecipeHeader extends StatelessWidget {
                 ),
               ))),
       maxHeight: 124,
-      minHeight: 7,
+      minHeight: 124,
     ));
   }
 }

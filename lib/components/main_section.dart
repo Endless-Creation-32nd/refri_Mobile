@@ -26,7 +26,7 @@ class MainSection extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.bold,
-                    color: BLACK_COLOR),
+                    color: SUB_COLOR_1),
               ),
               Text(
                 '전체보기',
